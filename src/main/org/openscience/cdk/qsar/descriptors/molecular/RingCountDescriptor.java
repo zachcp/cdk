@@ -1,10 +1,4 @@
-/*
- *  $RCSfile$
- *  $Author: yapchunwei $
- *  $Date: 2008-07-07 14:50:01 +0800 (Tue, 07 Jul 2008) $
- *  $Revision: 1 $
- *
- *  Copyright (C) 2004-2007  Yap Chun Wei <yapchunwei@users.sourceforge.net>
+/*  Copyright (C) 2004-2007  Yap Chun Wei <yapchunwei@users.sourceforge.net>
  *
  *  Contact: cdk-devel@lists.sourceforge.net
  *
@@ -22,9 +16,7 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-
-package libpadeldescriptor;
-
+package org.openscience.cdk.qsar.descriptors.molecular;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,7 +31,6 @@ import org.openscience.cdk.qsar.result.DoubleArrayResultType;
 import org.openscience.cdk.qsar.result.IDescriptorResult;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
 import org.openscience.cdk.ringsearch.SSSRFinder;
-
 
 /**
  * Number of rings
