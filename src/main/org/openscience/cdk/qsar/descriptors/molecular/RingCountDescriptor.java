@@ -20,6 +20,9 @@ package org.openscience.cdk.qsar.descriptors.molecular;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.openscience.cdk.annotations.TestClass;
+import org.openscience.cdk.annotations.TestMethod;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IRingSet;
@@ -56,6 +59,7 @@ import org.openscience.cdk.ringsearch.SSSRFinder;
  * @cdk.keyword molecular type nRing descriptor
  * @cdk.keyword descriptor
  */
+@TestClass("org.openscience.cdk.qsar.descriptors.molecular.RingCountDescriptorTest")
 public class RingCountDescriptor implements IMolecularDescriptor {
     
     public static final String[] names = {
@@ -100,6 +104,7 @@ public class RingCountDescriptor implements IMolecularDescriptor {
     }
 
     @Override
+    @TestMethod("testGetSpecification")
     public DescriptorSpecification getSpecification() {
         return new DescriptorSpecification(
                 "nRing",
@@ -109,21 +114,25 @@ public class RingCountDescriptor implements IMolecularDescriptor {
     }
 
     @Override
+    @TestMethod("testGetParameterNames")
     public String[] getParameterNames() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
+    @TestMethod("testGetParameterType_String")
     public Object getParameterType(String name) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
+    @TestMethod("testSetParameters_arrayObject")
     public void setParameters(Object[] params) throws CDKException {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
+    @TestMethod("testGetParameters")
     public Object[] getParameters() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
@@ -134,6 +143,7 @@ public class RingCountDescriptor implements IMolecularDescriptor {
      * @return  Names of descriptors
      */
     @Override
+    @TestMethod(value="testNamesConsistency")
     public String[] getDescriptorNames() {
         return names;
     }
@@ -158,6 +168,7 @@ public class RingCountDescriptor implements IMolecularDescriptor {
      * @return
      */
     @Override
+    @TestMethod("testCalculate_IAtomContainer")
     public DescriptorValue calculate(IAtomContainer container) {
         // Find Smallest Set of Smallest Rings.
         SSSRFinder finder = new SSSRFinder(container);
@@ -244,6 +255,7 @@ public class RingCountDescriptor implements IMolecularDescriptor {
      *         the actual type of values returned by the descriptor in the {@link org.openscience.cdk.qsar.DescriptorValue} object
      */
     @Override
+    @TestMethod("testGetDescriptorResultType")
     public IDescriptorResult getDescriptorResultType() {
         return new DoubleArrayResultType(names.length);
     }
