@@ -24,14 +24,15 @@
  *  */
 package org.openscience.cdk.tools.manipulator;
 
+import java.util.Iterator;
+import java.util.List;
+
+import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.annotations.TestClass;
 import org.openscience.cdk.annotations.TestMethod;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IBond.Order;
-
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Class with convenience methods that provide methods to manipulate
@@ -281,13 +282,13 @@ public class BondManipulator {
      */
     @TestMethod("testGetMaximumBondOrder_Order_Order,testGetMaximumBondOrder_Unset_Unset")
     public static IBond.Order getMaximumBondOrder(IBond.Order firstOrder, IBond.Order secondOrder) {
-    	if (firstOrder == Order.UNSET) {
-            if(secondOrder == Order.UNSET)
+    	if (firstOrder == (Order)CDKConstants.UNSET) {
+            if(secondOrder == (Order)CDKConstants.UNSET)
                 throw new IllegalArgumentException("Both bond orders are unset");
             return secondOrder;
         }
-    	if (secondOrder == Order.UNSET) {
-            if(firstOrder == Order.UNSET)
+    	if (secondOrder == (Order)CDKConstants.UNSET) {
+            if(firstOrder == (Order)CDKConstants.UNSET)
                 throw new IllegalArgumentException("Both bond orders are unset");
             return firstOrder;
         }

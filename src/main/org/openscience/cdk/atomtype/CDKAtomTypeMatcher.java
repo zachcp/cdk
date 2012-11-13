@@ -2600,7 +2600,7 @@ public class CDKAtomTypeMatcher implements IAtomTypeMatcher {
     	if (typeOrder != null) {
     		for (IBond bond : container.getConnectedBondsList(atom)) {
     			IBond.Order order = bond.getOrder();
-    			if (order != CDKConstants.UNSET && order != IBond.Order.UNSET) {
+    			if (order != CDKConstants.UNSET && order != (IBond.Order)CDKConstants.UNSET) {
     				if (BondManipulator.isHigherOrder(order, typeOrder)) return false;
     			} else if (bond.getFlag(CDKConstants.SINGLE_OR_DOUBLE)) {
     				if (typeOrder != IBond.Order.SINGLE &&

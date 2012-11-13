@@ -49,8 +49,7 @@ public interface IBond extends IElectronContainer {
 		SINGLE(1),
 		DOUBLE(2),
 		TRIPLE(3),
-		QUADRUPLE(4),
-		UNSET(0);
+		QUADRUPLE(4);
 
         private final Integer bondedElectronPairs;
 
@@ -66,7 +65,6 @@ public interface IBond extends IElectronContainer {
          * Order.DOUBLE.numeric()    // 2
          * Order.TRIPLE.numeric()    // 3
          * Order.QUADRUPLE.numeric() // 4
-         * Order.UNSET.numeric()     // 0
          * }</pre>
          *
          * @return number of bonded electron pairs

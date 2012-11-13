@@ -2104,7 +2104,7 @@ public class CDKAtomTypeMatcherTest extends AbstractCDKAtomTypeTest {
         IAtomContainer molecule = new AtomContainer();
         molecule.add(new Ring(6, "C"));
         for (IBond bond : molecule.bonds()) {
-            bond.setOrder(IBond.Order.UNSET);
+            bond.setOrder((IBond.Order)CDKConstants.UNSET);
             bond.setFlag(CDKConstants.SINGLE_OR_DOUBLE, true);
         }
         for (IAtom atom : molecule.atoms()) {
@@ -2135,7 +2135,7 @@ public class CDKAtomTypeMatcherTest extends AbstractCDKAtomTypeTest {
 		};
 		IAtomContainer molecule = MoleculeFactory.makePyrrole();
 		for (IBond bond : molecule.bonds()) {
-			bond.setOrder(IBond.Order.UNSET);
+			bond.setOrder((IBond.Order)CDKConstants.UNSET);
 			bond.setFlag(CDKConstants.SINGLE_OR_DOUBLE, true);
 		}
 		for (IAtom atom : molecule.atoms()) {
@@ -2302,7 +2302,7 @@ public class CDKAtomTypeMatcherTest extends AbstractCDKAtomTypeTest {
 		};
 		IAtomContainer molecule = MoleculeFactory.makePyridine();
 		for (IBond bond : molecule.bonds()) {
-			bond.setOrder(IBond.Order.UNSET);
+			bond.setOrder((IBond.Order)CDKConstants.UNSET);
 			bond.setFlag(CDKConstants.SINGLE_OR_DOUBLE, true);
 		}
 		assertAtomTypes(testedAtomTypes, expectedTypes, molecule);

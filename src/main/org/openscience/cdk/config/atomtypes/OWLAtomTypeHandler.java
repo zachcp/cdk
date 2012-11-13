@@ -100,7 +100,7 @@ public class OWLAtomTypeHandler extends DefaultHandler {
     		atomTypes.add(currentAtomType);
     		currentAtomType.setProperty(CDKConstants.PI_BOND_COUNT, piBondCount);
     		currentAtomType.setFormalNeighbourCount(neighborCount);
-    		if (maxBondOrder != Order.UNSET) currentAtomType.setMaxBondOrder(maxBondOrder);
+    		if (maxBondOrder != (Order)CDKConstants.UNSET) currentAtomType.setMaxBondOrder(maxBondOrder);
     		if (bondOrderSum > 0.1) currentAtomType.setBondOrderSum(bondOrderSum);
     	} else if ("formalCharge".equals(local)) {
     		if (currentChars.charAt(0) == '+') {
@@ -133,7 +133,7 @@ public class OWLAtomTypeHandler extends DefaultHandler {
     		currentAtomType.setAtomTypeName(atts.getValue("rdf:ID"));
     		piBondCount = 0;
     		neighborCount = 0;
-    		maxBondOrder = Order.UNSET;
+    		maxBondOrder = (Order)CDKConstants.UNSET;
     		bondOrderSum = 0.0;
     	} else if ("hasElement".equals(local)) {
     		String attrValue = atts.getValue("rdf:resource");

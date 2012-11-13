@@ -150,7 +150,7 @@ abstract public class AbstractAtomTypeTest extends CDKTestCase {
     		Order expectedMax = matched.getMaxBondOrder();
     		for (IBond bond : connections) {
     			IBond.Order order = bond.getOrder();
-    			if (order != CDKConstants.UNSET && order != IBond.Order.UNSET) {
+    			if (order != CDKConstants.UNSET) {
     				if (BondManipulator.isHigherOrder(order, expectedMax)) {
     	    			Assert.fail(
     	        			"At least one bond order exceeds the maximum for the atom type"
